@@ -17,7 +17,7 @@ const SignupForm = ({ changeMode }) => {
   const [region, setRegion] = useState("");
   const [regionError, setRegionError] = useState("");
 
-  const regions = ["Bangalore", "Hyderabad", "Chennai", "Mumbai", "Delhi"];
+  const regions = ["Bengaluru", "Hyderabad", "Chennai", "Mumbai", "Delhi"];
 
   const handleSignup = () => {
     let valid = true;

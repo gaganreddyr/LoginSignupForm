@@ -1,11 +1,20 @@
+:root{
+    --info-color: #00ddff;
+    --bh-color: #00bdda;
+    --text-color: #000000;
+    --font: Arial, sans-serif;
+    --fontsize: 13px;
+}
+
 .buttons button:hover{
-    background-color: #00bdda;
+    background-color: var(--bh-color);
 }
 
 .forgot{
     display: block;
-    font-size: 13px;
-    color: #00ddff;
+    font-size: var(--fontsize);
+    font-family: var(--font);
+    color: var(--info-color);
     cursor: pointer;
     margin-top: 15px;
     padding-left: 10px;
@@ -14,15 +23,12 @@
 
 .signup{
     display: block;
-    font-size: 13px;
-    color: #00ddff;
+    font-size: var(--fontsize);
+    font-family: var(--font);
+    color: var(--info-color);
     cursor: pointer;
     padding-left: 10px;
     text-align: left;
-
 }
 
-.error{
-    color: red;
-    font-size: 13px;
-}
+
