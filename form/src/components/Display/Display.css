@@ -1,9 +1,5 @@
 :root{
     --info-color: #00ddff;
-    --bg-color: linear-gradient(
-      135deg,
-      rgba(104, 104, 104, 0.073),
-      rgba(180, 180, 180, 0.148));
     --title-fontsize: 32px;
     --font: Arial, sans-serif;
 }
@@ -11,7 +7,10 @@
 .data{
   width:320px;
   min-height: 220px;
-  background: var(--bg-color);
+  background: linear-gradient(
+      135deg,
+      rgba(104, 104, 104, 0.073),
+      rgba(180, 180, 180, 0.148));
   backdrop-filter: blur(12px);
   padding: 30px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3);

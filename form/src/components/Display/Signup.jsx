@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Dropdown from "../Dropdown/Dropdown";
+import { validateEmail } from "../../utils/validateEmail";
+import { validatePassword } from "../../utils/validatePassword";
 import "./Signup.css";
 
 const SignupForm = ({ changeMode }) => {
@@ -16,23 +18,21 @@ const SignupForm = ({ changeMode }) => {
   const [confirmPassError, setConfirmPassError] = useState("");
   const [region, setRegion] = useState("");
   const [regionError, setRegionError] = useState("");
+  const [showRules, setShowRules] = useState(false);
 
   const regions = ["Bengaluru", "Hyderabad", "Chennai", "Mumbai", "Delhi"];
 
   const handleSignup = () => {
     let valid = true;
-    const emailRegex = /^[a-zA-Z0-9.]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+    const emailValidation = validateEmail(email);
+    const passwordValidation = validatePassword(password);
 
-    if (!email) {
-      setError("Please enter an email");
-      valid = false;
-    } 
-    else if (!emailRegex.test(email)) {
-      setError("Please enter a valid email");
+    if (emailValidation) {
+      setError(emailValidation);
       valid = false;
     }
-    if (!password) {
-      setPassError("Please enter a password");
+    if (passwordValidation) {
+      setPassError(passwordValidation);
       valid = false;
     }
     else if (password !== confirmPassword) {
@@ -76,17 +76,35 @@ const SignupForm = ({ changeMode }) => {
           setError("");
         }}
       />
+      
+      <div className="password-wrapper">
 
-      <Input
-        type="password"
-        placeholder="Password"
-        value={password}
-        error={passError}
-        onChange={(e) => {
-          setPassword(e.target.value);
-          setPassError("");
-        }}
-      />
+        <Input
+          type="password"
+          placeholder="Password"
+          value={password}
+          error={passError}
+          onFocus={() => setShowRules(true)}
+          onBlur={() => setShowRules(false)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setPassError("");
+          }}
+        />
+
+        {showRules && (
+          <div className="password-tooltip">
+            <ul>
+              <li>Minimum 8 characters</li>
+              <li>1 number</li>
+              <li>1 uppercase letter</li>
+              <li>1 lowercase letter</li>
+              <li>1 special character</li>
+            </ul>
+          </div>
+        )}
+
+      </div>
 
       <Input
         type="password"

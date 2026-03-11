@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import { validateEmail } from "../../utils/validateEmail";
 import "./Login.css";
 
 const LoginForm = ({ changeMode }) => {
@@ -15,14 +16,10 @@ const LoginForm = ({ changeMode }) => {
 
     let valid = true;
 
-    const emailRegex = /^[a-zA-Z0-9.]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+    const emailValidation = validateEmail(email);
 
-    if (!email) {
-      setError("Please enter an email");
-      valid = false;
-    } 
-    else if (!emailRegex.test(email)) {
-      setError(" Please enter a valid email");
+    if (emailValidation) {
+      setError(emailValidation);
       valid = false;
     }
     if (!password) {
