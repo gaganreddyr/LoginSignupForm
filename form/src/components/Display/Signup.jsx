@@ -6,6 +6,8 @@ import Dropdown from "../Dropdown/Dropdown";
 import { validateEmail } from "../../utils/validateEmail";
 import { validatePassword } from "../../utils/validatePassword";
 import "./Signup.css";
+import Modal from "../Modal/Modal";
+import { validateUsername } from "../../utils/validateUsername";
 
 const SignupForm = ({ changeMode }) => {
   const [username, setUsername] = useState("");
@@ -19,6 +21,7 @@ const SignupForm = ({ changeMode }) => {
   const [region, setRegion] = useState("");
   const [regionError, setRegionError] = useState("");
   const [showRules, setShowRules] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const regions = ["Bengaluru", "Hyderabad", "Chennai", "Mumbai", "Delhi"];
 
@@ -26,6 +29,7 @@ const SignupForm = ({ changeMode }) => {
     let valid = true;
     const emailValidation = validateEmail(email);
     const passwordValidation = validatePassword(password);
+    const usernameValidation = validateUsername(username);
 
     if (emailValidation) {
       setError(emailValidation);
@@ -39,8 +43,8 @@ const SignupForm = ({ changeMode }) => {
       setConfirmPassError("Passwords do not match");
       valid = false;
     }
-    if (!username) {
-      setUsernameError("Please enter a username");
+    if (usernameValidation) {
+      setUsernameError(usernameValidation);
       valid = false;
     }
     if (!region) {
@@ -48,6 +52,8 @@ const SignupForm = ({ changeMode }) => {
       valid = false;
     }
     if (!valid) return;
+
+    setShowModal(true);
 
     console.log("Signup Success", { email, password, confirmPassword, region });
   };
@@ -141,6 +147,16 @@ const SignupForm = ({ changeMode }) => {
         Already have an account? Click here to Login
       </Link>
       </p>
+
+      <div>
+
+      <Modal
+        open={showModal}
+        message="Account Created Successfully!"
+        onClose={() => setShowModal(false)}
+      />
+
+      </div>        
 
     </>
   );

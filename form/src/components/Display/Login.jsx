@@ -4,6 +4,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { validateEmail } from "../../utils/validateEmail";
 import "./Login.css";
+import Modal from "../Modal/Modal";
 
 const LoginForm = ({ changeMode }) => {
 
@@ -11,6 +12,8 @@ const LoginForm = ({ changeMode }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [passError, setPassError] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
   
   const handleLogin = () => {
 
@@ -27,6 +30,8 @@ const LoginForm = ({ changeMode }) => {
       valid = false;
     }
     if (!valid) return;
+
+    setShowModal(true);
 
     console.log("Login success", { email, password });
   };
@@ -74,6 +79,16 @@ const LoginForm = ({ changeMode }) => {
         New User? Click here to Signup
       </Link>
       </p>
+
+      <div>
+
+      <Modal
+        open={showModal}
+        message="Login Successful!"
+        onClose={() => setShowModal(false)}
+      />
+
+      </div>
 
     </>
   );

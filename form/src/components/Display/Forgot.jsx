@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import "./Forgot.css";
+import Modal from "../Modal/Modal";
+
 
 const ForgotPassword = ({ changeMode }) => {
 
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const handleSendLink = () => {
 
@@ -23,6 +26,8 @@ const ForgotPassword = ({ changeMode }) => {
       valid = false;
     }
     if (!valid) return;
+
+    setShowModal(true);
 
     console.log("Reset link sent to", email);
   };
@@ -54,6 +59,16 @@ const ForgotPassword = ({ changeMode }) => {
         Back to Login
       </Link>
       </p>
+
+      <div>
+
+      <Modal
+        open={showModal}
+        message="Reset link sent to your email"
+        onClose={() => setShowModal(false)}
+      />
+
+      </div>
 
     </>
   );
