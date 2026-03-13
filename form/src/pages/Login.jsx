@@ -1,40 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
-import { validateEmail } from "../../utils/validateEmail";
+import Input from "../components/Input/Input";
+import Button from "../components/Button/Button";
+import Modal from "../components/Modal/Modal";
+import PasswordToggle from "../components/PasswordToggle/PasswordToggle";
+import Login from "../hooks/Login";
 import "./Login.css";
-import Modal from "../Modal/Modal";
 
-const LoginForm = ({ changeMode }) => {
+const Loginform = ({ changeMode }) => {
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [passError, setPassError] = useState("");
-  const [showModal, setShowModal] = useState(false);
-
-  
-  const handleLogin = () => {
-
-    let valid = true;
-
-    const emailValidation = validateEmail(email);
-
-    if (emailValidation) {
-      setError(emailValidation);
-      valid = false;
-    }
-    if (!password) {
-      setPassError("Please enter a password");
-      valid = false;
-    }
-    if (!valid) return;
-
-    setShowModal(true);
-
-    console.log("Login success", { email, password });
-  };
+  const {
+    email,
+    password,
+    error,
+    passError,
+    showModal,
+    setEmail,
+    setPassword,
+    setError,
+    setPassError,
+    setShowModal,
+    handleLogin
+  } = Login();
 
   return (
     <>
@@ -49,8 +36,7 @@ const LoginForm = ({ changeMode }) => {
         }}
       />
 
-      <Input
-        type="password"
+      <PasswordToggle
         placeholder="Password"
         value={password}
         error={passError}
@@ -94,4 +80,4 @@ const LoginForm = ({ changeMode }) => {
   );
 };
 
-export default LoginForm;
+export default Loginform;

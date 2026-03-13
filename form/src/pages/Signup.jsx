@@ -1,62 +1,51 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
-import Dropdown from "../Dropdown/Dropdown";
-import { validateEmail } from "../../utils/validateEmail";
-import { validatePassword } from "../../utils/validatePassword";
+import Input from "../components/Input/Input";
+import Button from "../components/Button/Button";
+import Dropdown from "../components/Dropdown/Dropdown";
+import Modal from "../components/Modal/Modal";
+import PasswordToggle from "../components/PasswordToggle/PasswordToggle";
+import Signup from "../hooks/Signup";
 import "./Signup.css";
-import Modal from "../Modal/Modal";
-import { validateUsername } from "../../utils/validateUsername";
 
-const SignupForm = ({ changeMode }) => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [usernameError, setUsernameError] = useState("");
-  const [error, setError] = useState("");
-  const [passError, setPassError] = useState("");
-  const [confirmPassError, setConfirmPassError] = useState("");
-  const [region, setRegion] = useState("");
-  const [regionError, setRegionError] = useState("");
-  const [showRules, setShowRules] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
-  const regions = ["Bengaluru", "Hyderabad", "Chennai", "Mumbai", "Delhi"];
+const Signupform = ({ changeMode }) => {
 
-  const handleSignup = () => {
-    let valid = true;
-    const emailValidation = validateEmail(email);
-    const passwordValidation = validatePassword(password);
-    const usernameValidation = validateUsername(username);
+  const {
+    username,
+    email,
+    password,
+    confirmPassword,
+    region,
+    regions,
 
-    if (emailValidation) {
-      setError(emailValidation);
-      valid = false;
-    }
-    if (passwordValidation) {
-      setPassError(passwordValidation);
-      valid = false;
-    }
-    else if (password !== confirmPassword) {
-      setConfirmPassError("Passwords do not match");
-      valid = false;
-    }
-    if (usernameValidation) {
-      setUsernameError(usernameValidation);
-      valid = false;
-    }
-    if (!region) {
-      setRegionError("Please select a region");
-      valid = false;
-    }
-    if (!valid) return;
+    usernameError,
+    error,
+    passError,
+    confirmPassError,
+    regionError,
 
-    setShowModal(true);
+    showRules,
+    showModal,
 
-    console.log("Signup Success", { email, password, confirmPassword, region });
-  };
+    setUsername,
+    setEmail,
+    setPassword,
+    setConfirmPassword,
+    setRegion,
+
+    setUsernameError,
+    setError,
+    setPassError,
+    setConfirmPassError,
+    setRegionError,
+
+    setShowRules,
+    setShowModal,
+
+    handleSignup
+  } = Signup();
+
 
   return (
     <>
@@ -85,8 +74,7 @@ const SignupForm = ({ changeMode }) => {
       
       <div className="password-wrapper">
 
-        <Input
-          type="password"
+        <PasswordToggle
           placeholder="Password"
           value={password}
           error={passError}
@@ -112,8 +100,7 @@ const SignupForm = ({ changeMode }) => {
 
       </div>
 
-      <Input
-        type="password"
+      <PasswordToggle
         placeholder="Confirm Password"
         value={confirmPassword}
         error={confirmPassError}
@@ -162,4 +149,4 @@ const SignupForm = ({ changeMode }) => {
   );
 };
 
-export default SignupForm;
+export default Signupform;
