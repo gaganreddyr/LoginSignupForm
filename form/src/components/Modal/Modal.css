@@ -1,12 +1,3 @@
-:root{
-    --info-color: #00ddff;
-    --success-color: #00bf10;
-    --bh-color: #00bdda;
-    --text-color: #000000;
-    --font: Arial, sans-serif;
-    --fontsize: 13px;
-}
-
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -23,11 +14,11 @@
 }
 
 .modalBox {
-  background: aliceblue;
+  background: var(--modalbackground);
   text-align: center;
   padding: 22px;
-  color: #00bf10;
-  font-size: 17px;
+  color: var(--success);
+  font-size: var(--modalfontsize);
   font-weight: 600;
   padding-top: 3px;
   min-width: 150px;
@@ -39,8 +30,8 @@
 
 .modalButton {
   padding: 8px 16px;
-  background: var(--info-color);
-  color: var(--text-color);
+  background: var(--button);
+  color: var(--buttonfont);
   font-size: var(--fontsize);
   border: none;
   border-radius: 15px;
@@ -48,7 +39,7 @@
 }
 
 .modalButton:hover {
-  background: var(--bh-color);
+  background: var(--buttonhover);
 }
 
 @keyframes modalFade {

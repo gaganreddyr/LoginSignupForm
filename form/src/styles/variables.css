@@ -1,0 +1,20 @@
+:root{
+    --error: red;
+    --info: blue;
+    --success: #00bf10;
+    --textcolor: black;
+    --font: Arial, sans-serif;
+    --fontsize: 13px;
+    --titlefontsize: 32px;
+    --modalfontsize: 17px;
+    --background: white;
+    --button: blue;
+    --buttonhover: rgb(0, 0, 185);
+    --buttonfont: white;
+    --buttonfontsize: 15px;
+    --inputbg: rgba(255, 255, 255, 0.502);
+    --dropdownbg: rgb(185, 221, 252);
+    --dropdownbgh: rgb(166, 212, 253);
+    --modalbackground: aliceblue;
+
+}

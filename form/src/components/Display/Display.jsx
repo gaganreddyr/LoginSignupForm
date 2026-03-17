@@ -3,7 +3,7 @@ import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
 import Forgot from "../../pages/Forgot";
 import "./Display.css";
-import image from "../../assets/images/1.png";
+import image from "../../assets/images/2.jpg";
 const Display = () => {
 
   const [mode, setMode] = useState("login");

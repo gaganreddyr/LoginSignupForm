@@ -1,9 +1,3 @@
-:root{
-    --info-color: #00ddff;
-    --title-fontsize: 32px;
-    --font: Arial, sans-serif;
-}
-
 .container{
   display:flex;
   margin:0;
@@ -28,7 +22,7 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: var(--background);
   backdrop-filter: blur(12px);
   align-items: center;
   justify-content: center;
@@ -37,18 +31,19 @@
 .form{
   width: 350px;
   min-height: 220px;
-  background: white;
+  background: var(--background);
   text-align:center;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 30px;
   padding-bottom: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 
 }
 
 .title{
-  font-size: var(--title-fontsize);
+  font-size: var(--titlefontsize);
   font-family: var(--font);
   margin-bottom: 30px;
-  color: var(--info-color);
+  color: var(--info);
 }

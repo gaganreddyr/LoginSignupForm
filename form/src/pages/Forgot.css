@@ -1,14 +1,7 @@
-.root{
-    --info-color: #00ddff;
-    --bh-color: #00bdda;
-    --fontsize: 13px;
-    --font: arial, sans-serif;
-}
-
 .back{
     display: block;
     font-size: var(--fontsize);
-    color: var(--info-color);
+    color: var(--info);
     font-family: var(--font);
     cursor: pointer;
     margin-top: 15px;
@@ -21,6 +14,4 @@
     justify-content: right;
     margin-top: 20px;
 }
-.buttons button:hover{
-    background-color: var(--bh-color);
-}
+

@@ -1,19 +1,16 @@
-
-:root {
-  --primary-color: #00ddff;
-  --text-color: #000000;
-}
-
-
 .btn{
     padding: 10px 25px;
     border-radius: 30px;
     border: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: var(--buttonfontsize);
+}
+
+.btn:hover{
+    background-color: var(--buttonhover);
 }
 
 .primary{
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: var(--button);
+    color: var(--buttonfont);
 }

@@ -3,5 +3,5 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  background: rgb(220, 220, 220);
+  background: var(--background);
 }

@@ -7,9 +7,7 @@
     --fontsize: 13px;
 }
 
-.buttons button:hover{
-    background-color: var(--bh);
-}
+
 
 .login {
     display: block;
