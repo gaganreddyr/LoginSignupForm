@@ -12,40 +12,9 @@ import "./Signup.css";
 const Signupform = ({ changeMode }) => {
 
   const {
-    username,
-    email,
-    password,
-    confirmPassword,
-    region,
-    regions,
-
-    usernameError,
-    error,
-    passError,
-    confirmPassError,
-    regionError,
-
-    showRules,
-    showModal,
-
-    setUsername,
-    setEmail,
-    setPassword,
-    setConfirmPassword,
-    setRegion,
-
-    setUsernameError,
-    setError,
-    setPassError,
-    setConfirmPassError,
-    setRegionError,
-
-    setShowRules,
-    setShowModal,
-
-    handleSignup
-  } = Signup();
-
+    username, email, password, confirmPassword, region, regions, usernameError, error, passError, confirmPassError, regionError, showRules, showModal,
+    setUsername, setEmail, setPassword, setConfirmPassword, setRegion, setUsernameError, setError, setPassError, setConfirmPassError, setRegionError, setShowRules, setShowModal,
+    handleSignup} = Signup();
 
   return (
     <>

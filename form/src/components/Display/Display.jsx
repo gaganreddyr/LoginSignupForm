@@ -3,7 +3,7 @@ import Login from "../../pages/Login";
 import Signup from "../../pages/Signup";
 import Forgot from "../../pages/Forgot";
 import "./Display.css";
-
+import image from "../../assets/images/1.png";
 const Display = () => {
 
   const [mode, setMode] = useState("login");
@@ -13,9 +13,15 @@ const Display = () => {
   };
 
   return (
+    <div className="container">
+    <div className="imgleft">
+      <img src={image} alt="" />
+    </div>
+    
     <div className="data">
 
-      <h1 className="title">
+      <div className="form">
+        <h1 className="title">
         {mode === "signup"
           ? "Signup"
           : mode === "forgot"
@@ -27,6 +33,8 @@ const Display = () => {
       {mode === "signup" && <Signup changeMode={changeMode} />}
       {mode === "forgot" && <Forgot changeMode={changeMode} />}
 
+      </div>
+    </div>
     </div>
   );
 };

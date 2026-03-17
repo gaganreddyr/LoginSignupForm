@@ -9,14 +9,9 @@ import "./Forgot.css";
 const Forgotform = ({ changeMode }) => {
 
   const {
-    email,
-    error,
-    showModal,
-    setEmail,
-    setError,
-    setShowModal,
-    handleReset
-  } = Forgot();
+    email, error, showModal, 
+    setEmail, setError, setShowModal, 
+    handleReset} = Forgot();
 
   return (
     <>

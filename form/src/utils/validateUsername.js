@@ -4,8 +4,8 @@ export const validateUsername = (username) => {
     return "Please enter a username";
   }
 
-  if (username.length < 3) {
-    return "Username must be at least 3 characters";
+  if (username.length < 4) {
+    return "Username must be at least 4 characters";
   }
 
   const usernameRegex = /^[a-zA-Z0-9_]+$/;

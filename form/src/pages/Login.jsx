@@ -10,18 +10,9 @@ import "./Login.css";
 const Loginform = ({ changeMode }) => {
 
   const {
-    email,
-    password,
-    error,
-    passError,
-    showModal,
-    setEmail,
-    setPassword,
-    setError,
-    setPassError,
-    setShowModal,
-    handleLogin
-  } = Login();
+    email, password, error, passError, showModal, 
+    setEmail, setPassword, setError, setPassError, setShowModal, 
+    handleLogin} = Login();
 
   return (
     <>

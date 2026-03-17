@@ -57,12 +57,7 @@ const Signup = () => {
 
     setShowModal(true);
 
-    console.log("Signup Success", {
-      username,
-      email,
-      password,
-      region
-    });
+    console.log("Signup Success", { username, email, password, region });
   };
 
   return {
