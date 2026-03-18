@@ -1,14 +1,3 @@
-:root{
-    --bg: #e0effc80;
-    --info: #00ddff;
-    --bh: #00bdda;
-    --text: #000000;
-    --font: Arial, sans-serif;
-    --fontsize: 13px;
-}
-
-
-
 .login {
     display: block;
     font-size: var(--fontsize);
