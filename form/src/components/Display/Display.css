@@ -29,7 +29,7 @@
 }
 
 .form{
-  width: 350px;
+  width: 280px;
   min-height: 220px;
   background: var(--background);
   text-align:center;
@@ -37,7 +37,7 @@
   padding-right: 50px;
   padding-top: 30px;
   padding-bottom: 30px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -46,4 +46,31 @@
   font-family: var(--font);
   margin-bottom: 30px;
   color: var(--info);
+}
+
+@media (max-width: 768px) {
+
+  /* Stack layout */
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .imgleft {
+    display: none;
+  }
+
+  .data {
+    flex: none;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form {
+    width: 90%;
+    max-width: 350px;
+    padding: 25px; 
+  }
 }
