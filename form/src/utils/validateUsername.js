@@ -4,7 +4,7 @@ export const validateUsername = (username) => {
     return "Please enter a username";
   }
 
-  if (username.length < 4) {
+  if (!(username.length >= 4)) {
     return "Username must be at least 4 characters";
   }
 

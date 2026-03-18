@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { validateEmail } from "../utils/validateEmail";
 import { validatePassword } from "../utils/validatePassword";
+import { validateUsername } from "../utils/validateUsername"; 
 
 const Signup = () => {
 
@@ -27,9 +28,10 @@ const Signup = () => {
 
     const emailValidation = validateEmail(email);
     const passwordValidation = validatePassword(password);
+    const usernameValidation = validateUsername(username);
 
-    if (!username) {
-      setUsernameError("Please enter a username");
+    if (usernameValidation) {
+      setUsernameError(usernameValidation);
       valid = false;
     }
 
