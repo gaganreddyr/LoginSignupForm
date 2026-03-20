@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { validateEmail } from "../utils/validateEmail";
 
-const Login = () => {
+const Loginhook = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,4 +47,4 @@ const Login = () => {
   };
 };
 
-export default Login;
+export default Loginhook;

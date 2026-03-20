@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import Input from "../components/Input/Input";
 import Button from "../components/Button/Button";
 import Modal from "../components/Modal/Modal";
-import Forgot from "../hooks/Forgot";
+import Forgothook from "../hooks/Forgothook";
 import "./Forgot.css";
 
-const Forgotform = ({ changeMode }) => {
+const Forgot = ({ changeMode }) => {
 
   const {
     email, error, showModal, 
     setEmail, setError, setShowModal, 
-    handleReset} = Forgot();
+    handleReset} = Forgothook();
 
   return (
     <>
@@ -55,4 +55,4 @@ const Forgotform = ({ changeMode }) => {
   );
 };
 
-export default Forgotform;
+export default Forgot;

@@ -10,27 +10,24 @@ describe("validatePassword", () => {
     jest.restoreAllMocks();
   });
 
-  // 🔹 Empty case (returns string)
   test("returns error for empty password", () => {
     expect(validatePassword(""))
       .toBe("Please enter a password");
   });
 
-  // 🔹 All other cases (alert-based)
   it.each([
-    // ✅ Valid cases
+    
     ["Test@123", false],
-    ["StrongPass1@", false], // longer valid password
+    ["StrongPass1@", false], 
 
-    // ❌ Invalid cases (should trigger alert)
-    ["short1@", true],           // too short
-    ["onlyletters", true],       // no number, no caps, no special
-    ["12345678", true],          // only numbers
-    ["NoNumber@", true],         // missing number
-    ["        ", true],          // spaces only
-    ["test@123", true],          // missing uppercase
-    ["TEST@123", true],          // missing lowercase
-    ["Test1234", true],          // missing special character
+    ["short1@", true],           
+    ["onlyletters", true],       
+    ["12345678", true],          
+    ["NoNumber@", true],         
+    ["        ", true],          
+    ["test@123", true],          
+    ["TEST@123", true],          
+    ["Test1234", true],          
 
   ])("validatePassword('%s') → alert called: %s", (input, shouldAlert) => {
     

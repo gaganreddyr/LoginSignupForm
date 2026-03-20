@@ -5,16 +5,16 @@ import Button from "../components/Button/Button";
 import Dropdown from "../components/Dropdown/Dropdown";
 import Modal from "../components/Modal/Modal";
 import PasswordToggle from "../components/PasswordToggle/PasswordToggle";
-import Signup from "../hooks/Signup";
+import Signuphook from "../hooks/Signuphook";
 import "./Signup.css";
 
 
-const Signupform = ({ changeMode }) => {
+const Signup = ({ changeMode }) => {
 
   const {
     username, email, password, confirmPassword, region, regions, usernameError, error, passError, confirmPassError, regionError, showRules, showModal,
     setUsername, setEmail, setPassword, setConfirmPassword, setRegion, setUsernameError, setError, setPassError, setConfirmPassError, setRegionError, setShowRules, setShowModal,
-    handleSignup} = Signup();
+    handleSignup} = Signuphook();
 
   return (
     <>
@@ -118,4 +118,4 @@ const Signupform = ({ changeMode }) => {
   );
 };
 
-export default Signupform;
+export default Signup;

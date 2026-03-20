@@ -3,7 +3,7 @@ import { validateEmail } from "../utils/validateEmail";
 import { validatePassword } from "../utils/validatePassword";
 import { validateUsername } from "../utils/validateUsername"; 
 
-const Signup = () => {
+const Signuphook = () => {
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -98,4 +98,4 @@ const Signup = () => {
   };
 };
 
-export default Signup;
+export default Signuphook;

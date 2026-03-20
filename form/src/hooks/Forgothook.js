@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { validateEmail } from "../utils/validateEmail";
 
-const Forgot = () => {
+const Forgothook = () => {
 
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
@@ -36,4 +36,4 @@ const Forgot = () => {
   };
 };
 
-export default Forgot;
+export default Forgothook;

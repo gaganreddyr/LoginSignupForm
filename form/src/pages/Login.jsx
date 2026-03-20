@@ -4,15 +4,15 @@ import Input from "../components/Input/Input";
 import Button from "../components/Button/Button";
 import Modal from "../components/Modal/Modal";
 import PasswordToggle from "../components/PasswordToggle/PasswordToggle";
-import Login from "../hooks/Login";
+import Loginhook from "../hooks/Loginhook";
 import "./Login.css";
 
-const Loginform = ({ changeMode }) => {
+const Login = ({ changeMode }) => {
 
   const {
     email, password, error, passError, showModal, 
     setEmail, setPassword, setError, setPassError, setShowModal, 
-    handleLogin} = Login();
+    handleLogin} = Loginhook();
 
   return (
     <>
@@ -71,4 +71,4 @@ const Loginform = ({ changeMode }) => {
   );
 };
 
-export default Loginform;
+export default Login;
