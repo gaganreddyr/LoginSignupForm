@@ -25,7 +25,13 @@
   background: var(--background);
   backdrop-filter: blur(12px);
   align-items: center;
-  justify-content: center;
+  position: relative;
+}
+
+.theme-switch {
+  position: absolute;
+  bottom: 20px;     
+  right: 20px;      
 }
 
 .form{
@@ -37,8 +43,8 @@
   padding-right: 50px;
   padding-top: 30px;
   padding-bottom: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-
+  box-shadow: var(--shadow);
+  margin: auto;
 }
 
 .title{

@@ -8,7 +8,7 @@
   justify-content:flex-start;
   width:100%;
   box-sizing:border-box;
-  box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--boxshadow);
 }
 
 .inputBox input{
@@ -16,6 +16,7 @@
   outline:none;
   width:100%;
   background:transparent;
+  color: var(--textcolor);
 }
 
 .inputBox input::placeholder{
