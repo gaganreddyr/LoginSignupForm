@@ -1,0 +1,67 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;   /* bigger for text */
+  height: 36px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* background */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: var(--button);
+  border-radius: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+
+/* moving circle */
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 38px;   /* bigger to hold text */
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--background);
+  border-radius: 50px;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+/* move right */
+.switch input:checked + .slider::before {
+  transform: translateX(36px);
+}
+
+/* TEXT inside circle */
+.slider-text {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 38px;
+  height: 30px;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: var(--textcolor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+/* move text with circle */
+.switch input:checked + .slider .slider-text {
+  transform: translate(36px, -50%);
+}
