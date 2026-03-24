@@ -130,6 +130,24 @@ Reusable UI components that are imported into pages to build the user interface.
 - Displays message clearly  
 - Closes when button is clicked  
 
+## ToggleSwitch
+
+### Description  
+A reusable toggle switch component used to represent a binary state (on/off). Commonly used for features like dark mode, notifications, and enabling/disabling settings.
+
+### Props  
+- `checked` – controls the current state of the toggle (true/false)  
+- `onChange` – function triggered when the toggle state changes  
+- `label` – optional text displayed beside the toggle  
+- `disabled` – disables the toggle interaction (optional)  
+
+### Behavior  
+- Reflects the state based on the `checked` prop  
+- Calls `onChange` when user toggles the switch  
+- Works as a controlled component (state managed by parent)  
+- Shows label when provided  
+- Prevents interaction when `disabled` is true 
+
 --------------------------------------------------
 
 # Hooks
@@ -343,6 +361,12 @@ Testing ensures that all components and logic work correctly from the user’s p
 - Supports keyboard navigation  
 - Displays clear error messages  
 - Dropdown supports improved accessibility behavior  
+
+--------------------------------------------------
+
+# Theme Switch UI
+
+A custom toggle switch is implemented using a checkbox input styled with CSS, positioned absolutely within the layout, and synchronized with the global theme state for accurate visual feedback.
 
 --------------------------------------------------
 

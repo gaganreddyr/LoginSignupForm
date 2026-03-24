@@ -4,7 +4,9 @@ import Signup from "../../pages/Signup";
 import Forgot from "../../pages/Forgot";
 import "./Display.css";
 import image from "../../assets/images/2.jpg";
-const Display = () => {
+import ToggleSwitch from "../ToggleSwitch/ToggleSwitch"; 
+
+const Display = ({ theme, toggleTheme }) => {
 
   const [mode, setMode] = useState("login");
 
@@ -19,6 +21,10 @@ const Display = () => {
     </div>
     
     <div className="data">
+
+      <div className="theme-switch">
+        <ToggleSwitch checked={theme === "dark"} onChange={toggleTheme} />
+      </div>
 
       <div className="form">
         <h1 className="title">
