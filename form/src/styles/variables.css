@@ -8,16 +8,21 @@
     --titlefontsize: 32px;
     --modalfontsize: 17px;
     --background: white;
+
     --button: blue;
     --buttonhover: rgb(0, 0, 185);
     --buttonfont: white;
     --buttonfontsize: 15px;
+
     --inputbg: rgba(255, 255, 255, 0.502);
+
     --dropdownbg: rgb(185, 221, 252);
     --dropdownbgh: rgb(166, 212, 253);
+    
     --modalbackground: aliceblue;
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     --boxshadow: 1px 3px 1px rgba(0, 0, 0, 0.25);
+    --eye: #464646;
 }
 
 [data-theme="dark"] {
@@ -39,4 +44,5 @@
     --modalbackground: #1a1a1a;
     --shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
     --boxshadow: 1px 3px 1px rgba(255, 255, 255, 0.25);
+    --eye: #b0b0b0;
 }
