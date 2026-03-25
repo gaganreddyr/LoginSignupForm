@@ -11,7 +11,7 @@ The goal of this project is to create scalable, maintainable, and reusable compo
 
 The project is organized into the following folders:
 
-- assets -> Contians all images and icons
+- assets -> Contains all images and icons
 - components → Reusable UI elements
 - hooks → Logic and State management
 - utils → Validation functions
@@ -319,10 +319,10 @@ Testing ensures that all components and logic work correctly from the user’s p
     Tests individual UI components to verify rendering and interaction.
 
 ### Behavior
-    - Checks if components render correctly  
-    - Verifies user input handling  
-    - Ensures click events work properly  
-    - Validates conditional rendering (error messages, modal visibility)  
+- Checks if components render correctly  
+- Verifies user input handling  
+- Ensures click events work properly  
+- Validates conditional rendering (error messages, modal visibility)  
 
 ## Page Testing
 
@@ -330,10 +330,11 @@ Testing ensures that all components and logic work correctly from the user’s p
     Tests complete pages to ensure proper integration of components and hooks.
 
 ### Behavior
-    - Simulates user interactions (typing, clicking)  
-    - Validates form behavior  
-    - Checks error handling  
-    - Verifies successful form submission  
+- Simulates user interactions (typing, clicking)  
+- Validates form behavior  
+- Checks error handling  
+- Verifies successful form submission
+- Changes the UI theme correctly  
 
 ## Validation Testing
 
@@ -341,9 +342,9 @@ Testing ensures that all components and logic work correctly from the user’s p
     Tests utility functions to ensure validation logic works correctly.
 
 ### Behavior
-    - Tests valid and invalid inputs  
-    - Verifies correct error messages  
-    - Ensures edge cases are handled properly   
+- Tests valid and invalid inputs  
+- Verifies correct error messages  
+- Ensures edge cases are handled properly   
 
 --------------------------------------------------
 
