@@ -4,11 +4,17 @@ const Theme = () => {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, []);
+  const params = new URLSearchParams(window.location.search);
+  const urlTheme = params.get("theme");
+
+  const savedTheme = localStorage.getItem("theme");
+
+  if (urlTheme === "light" || urlTheme === "dark") {
+    setTheme(urlTheme);
+  } else if (savedTheme) {
+    setTheme(savedTheme);
+  }
+}, []);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -16,7 +22,17 @@ const Theme = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === "light" ? "dark" : "light"));
+    setTheme(prev => {
+      const newTheme = prev === "light" ? "dark" : "light";
+
+      const params = new URLSearchParams(window.location.search);
+      params.set("theme", newTheme);
+
+      const newUrl = `${window.location.pathname}?${params.toString()}`;
+      window.history.replaceState({}, "", newUrl);
+
+      return newTheme;
+    });
   };
 
   return { theme, toggleTheme };

@@ -1,7 +1,7 @@
 import React from "react";
 import "./ToggleSwitch.css";
 
-const ToggleSwitch = ({ checked, onChange, label }) => {
+const ToggleSwitch = ({ checked, onChange, label, onText, offText }) => {
   return (
     <div className="toggle-container">
       {label && <span className="toggle-label">{label}</span>}
@@ -14,7 +14,7 @@ const ToggleSwitch = ({ checked, onChange, label }) => {
         />
         <span className="slider">
           <span className="slider-text">
-            {checked ? "Dark" : "Light"}
+            {checked ? onText : offText}
           </span>
         </span>
       </label>
